@@ -436,3 +436,16 @@ button{font:inherit}
   padding:0;
 }
 .recipe li{margin:6px 0; font-size:13px; line-height:1.25}
+
+/* Убираем внешнюю рамку/карточку вокруг всего сайта */
+.phone, .app, .container {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  background: transparent !important;
+}
+
+/* если ещё остаётся скругление по краям */
+.phone, .app {
+  border-radius: 0 !important;
+}
