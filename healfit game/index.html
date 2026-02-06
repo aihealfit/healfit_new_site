@@ -1,0 +1,139 @@
+<!-- index.html (новая версия) -->
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HealFit — Habits Game (MVP)</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <div class="bg"></div>
+
+  <header class="topbar">
+    <a class="backHomeBtn" href="../index.html" aria-label="Вернуться на главную">← Вернуться на главную</a>
+    <div class="brand">
+      <div class="logo">HF</div>
+      <div class="brandText">
+        <div class="brandTitle">HealFit</div>
+        <div class="brandSub">Habits Game • MVP</div>
+      </div>
+    </div>
+
+    <div class="topStats">
+      <div class="pill">
+        <span class="pillLabel">XP</span>
+        <span id="xpValue" class="pillValue">0</span>
+      </div>
+      <div class="pill">
+        <span class="pillLabel">Streak</span>
+        <span id="streakValue" class="pillValue">0</span>
+        <span class="pillHint">🔥</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero glass">
+      <div class="heroText">
+        <h1>Микро-вопросы про ЗОЖ — привычки без лекций</h1>
+        <p>Короткие интерактивы, XP, streak и видимый путь вперёд</p>
+
+        <div class="heroActions">
+          <button id="btnContinue" class="btn primary">Продолжить</button>
+          <button id="btnShowPath" class="btn ghost">Показать путь</button>
+        </div>
+      </div>
+
+      <div class="heroProgress">
+        <div class="levelRow">
+          <div class="levelTitle">
+            <span id="levelLabel">Lv 1 — новичок</span>
+          </div>
+          <div class="levelMeta">
+            <span id="levelPct">0%</span>
+          </div>
+        </div>
+
+        <div class="progressBar">
+          <div id="levelBar" class="progressFill" style="width: 0%"></div>
+        </div>
+
+        <div class="miniStats">
+          <div class="statCard">
+            <div class="statLabel">Следующий урок</div>
+            <div id="nextLessonLabel" class="statValue">—</div>
+          </div>
+          <div class="statCard">
+            <div class="statLabel">Уроков пройдено</div>
+            <div id="doneTotalLabel" class="statValue">0</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODULES -->
+    <section class="section">
+      <div class="sectionHeader">
+        <h2>Модули</h2>
+        <span id="activeModuleHint" class="muted">Выбери модуль</span>
+      </div>
+
+      <div id="modulesGrid" class="grid"></div>
+    </section>
+
+    <!-- PATH (per-module) -->
+    <section id="pathSection" class="section">
+      <div class="sectionHeader">
+        <h2 id="pathTitle">Путь обучения</h2>
+        <span class="muted">выбранный модуль</span>
+      </div>
+      <div id="pathList" class="path"></div>
+    </section>
+  </main>
+
+  <!-- TOASTS -->
+  <div id="toastHost" class="toastHost" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- MODAL -->
+  <div id="modalBackdrop" class="backdrop" aria-hidden="true">
+    <div class="modal glass" role="dialog" aria-modal="true" aria-labelledby="lessonTitle" aria-describedby="questionText">
+      <button id="btnCloseModal" class="iconBtn" aria-label="Закрыть">✕</button>
+
+      <div class="modalHeader">
+        <div class="modalKicker" id="lessonModule">—</div>
+        <h3 id="lessonTitle" class="modalTitle">—</h3>
+
+        <div class="modalInfoRow">
+          <div class="chip">
+            <span id="qCounter">Вопрос 1 / 5</span>
+          </div>
+          <div class="chip">
+            <span>XP за урок:</span>
+            <strong id="lessonXp">50</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="modalBody">
+        <!-- персонаж над вопросом -->
+        <div class="brocciWrap" aria-hidden="true">
+          <img id="brocciImg" class="brocciImg" src="assets/img/brocci_waiting.png" alt="" />
+        </div>
+
+        <p id="questionText" class="question">—</p>
+
+        <div id="answers" class="answers"></div>
+
+        <div class="modalFooter">
+          <div id="feedback" class="feedback muted">Выберите вариант ответа</div>
+          <button id="btnNextQuestion" class="btn primary" disabled>Далее</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
