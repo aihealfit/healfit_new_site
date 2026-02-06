@@ -2,164 +2,243 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>HealFit — Главная</title>
-  <link rel="stylesheet" href="./assets/css/styles.css" />
+  <link rel="stylesheet" href="./assets/css/styles.css?v=7" />
 </head>
+
 <body>
   <div class="container">
     <div class="phone">
       <div class="app">
 
-        <div class="topbar">
-          <button class="burger" id="burgerBtn" aria-label="Меню"><span></span></button>
-          <div class="logo">HealFit</div>
-          <div class="top-actions">
-            <button class="pill primary">Вход</button>
-            <button class="pill">Регистрация</button>
-          </div>
-        </div>
+        <!-- Header -->
+        <header class="topbar">
+          <button class="iconbtn" id="drawerOpen" aria-label="Открыть меню">
+            <span class="burger"></span>
+          </button>
 
+          <div class="brand">
+            <span class="brand__logo">HealFit</span>
+          </div>
+
+          <div class="auth">
+            <a class="pill pill--filled" href="#">Вход</a>
+            <a class="pill pill--ghost" href="#">Регистрация</a>
+          </div>
+        </header>
+
+        <!-- Tabs -->
         <div class="tabs">
-          <div class="tabbar">
-            <div class="tab active" data-go="./index.html">Информация</div>
-            <div class="tab" data-go="./assistant.html">ИИ-ассистент</div>
-          </div>
+          <button class="tab is-active" type="button">Информация</button>
+          <button class="tab" type="button" onclick="location.href='./assistant.html'">ИИ-ассистент</button>
         </div>
 
-        <div class="hero">
-          <div class="big">HealFit</div>
-          <div class="sub">Хватит винить себя!</div>
-          <div class="cta">
-            <button class="btn primary" onclick="location.href='./assistant.html'">Начать</button>
-            <button class="btn" onclick="location.href='./trainings.html'">Подробнее</button>
-          </div>
-          <img src="./assets/img/check.png" alt="hero" />
-        </div>
+        <!-- Hero -->
+        <section class="hero">
+          <div class="hero__inner">
+            <div class="hero__title">HealFit</div>
+            <div class="hero__subtitle">Попробуй по-другому</div>
 
-        <div class="section">
-          <div class="text">
-            <b>HealFit</b> — сервис по подбору питания и активности с учетом индивидуальных особенностей человека.
+            <div class="hero__cta">
+              <button class="btn btn-primary" type="button" onclick="location.href='./assistant.html'">Начать</button>
+              <button class="btn btn-outline" type="button" onclick="location.href='./assistant.html'">Подробнее</button>
+            </div>
           </div>
 
-          <div class="h2">Почему тебе понравится с нами</div>
+          <!-- Пока одна картинка -->
+          <img class="hero__img" src="./assets/img/check.png" alt="hero" />
+        </section>
+
+        <!-- Main content -->
+        <section class="section">
+          <div class="lead">
+            <b>HealFit</b> - сервис по подбору питания и активности с учетом индивидуальных особенностей человека
+          </div>
+
+          <h2 class="h2">Почему тебе понравится с нами</h2>
 
           <div class="card bullets">
             <div class="bullet">
               <div class="tick"><img src="./assets/img/check.png" alt=""></div>
               <div>
                 <div class="title">Персональный план</div>
-                <div class="desc">Собираем твои данные и подстраиваем рекомендации под твой режим и цели.</div>
+                <div class="desc">
+                  Мы собрали свою базу данных и настроили искусственный интеллект качественно обрабатывать информацию пользователя, чтобы он смог помочь именно тебе!
+                </div>
               </div>
             </div>
 
             <div class="bullet">
               <div class="tick"><img src="./assets/img/check.png" alt=""></div>
               <div>
-                <div class="title">Моментальные ответы</div>
-                <div class="desc">ИИ-помощник отвечает на вопросы и помогает внедрять полезные привычки без перегруза.</div>
-              </div>
-            </div>
-
-            <div class="bullet">
-              <div class="tick"><img src="./assets/img/check.png" alt=""></div>
-              <div>
-                <div class="title">Без жёстких ограничений</div>
-                <div class="desc">Не “диета на силе воли”, а маленькие изменения, которые реально держатся.</div>
-              </div>
-            </div>
-
-            <div class="bullet">
-              <div class="tick"><img src="./assets/img/check.png" alt=""></div>
-              <div>
-                <div class="title">Геймификация</div>
-                <div class="desc">Баллы, уровни, задания и прогресс — чтобы мотивация не исчезала через 3 дня.</div>
+                <div class="title">Получение моментального ответа на все интересующие тебя вопросы от AI-помощника</div>
+                <div class="desc">
+                  Искусственный интеллект ответит на любые вопросы в индустрии ЗОЖ, поможет углубить знания в области и внедрить полезные привычки без резких изменений образа жизни
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
-            <div class="hf-callout">
+        <!-- Callout (как на скрине) -->
+        <div class="hf-callout">
+          <div class="hf-callout__under">продолжение</div>
 
           <div class="hf-callout__text">
-      Скажи стоп постоянному стрессу от подсчета калорий и строгих ограничений
+            Скажи стоп постоянному<br>
+            стрессу от подсчета калорий<br>
+            и строгих ограничений
+          </div>
+
+          <img class="hf-callout__img" src="./assets/img/check.png" alt="mascot" />
         </div>
 
-  <img class="hf-callout__img" src="./assets/img/check.png" alt="mascot" />
-</div>
+        <section class="section">
 
-        <div class="section">
-          <div class="h2">Тренировки</div>
-          <div class="grid2">
-            <a class="card item" href="./trainings.html">
-              <div class="thumb"><img src="./assets/img/check.png" alt=""></div>
-              <div class="meta">
-                <div class="name">Здоровая спина</div>
-                <div class="row"><span class="muted">20 минут в день</span><span class="xp">+150xp</span></div>
+          <div class="card bullets">
+            <div class="bullet">
+              <div class="tick"><img src="./assets/img/check.png" alt=""></div>
+              <div>
+                <div class="title">Особенный подход</div>
+                <div class="desc">
+                  Мы не будем говорить тебе вести дневник питания, отказываться от любимых блюд и подсчитывать калории - НЕТ, мы за плавное и долговечное внедрение полезных привычек в виде игры-челленджа
+                </div>
+              </div>
+            </div>
+
+            <div class="bullet">
+              <div class="tick"><img src="./assets/img/check.png" alt=""></div>
+              <div>
+                <div class="title">Поддержка от партнеров - скидки и другие привилегии</div>
+                <div class="desc">
+                  Освоив нашу технику интуитивного питания ты не будешь находить себя за столом в 11 часов ночи с ложкой нутеллы в руке
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Green banner -->
+          <div class="green-banner">
+            <img class="green-banner__img" src="./assets/img/check.png" alt="broccoli">
+            <div class="green-banner__text">
+              Измени свою жизнь,<br>
+              внедрив новые полезные привычки!
+            </div>
+          </div>
+
+          <!-- Certificate -->
+          <div class="card cert">
+            <div class="cert__text">
+              По итогам работы ты<br>
+              получишь <b>сертификат биохакера</b>, который будет подтверждать, что теперь<br>
+              <b>ты управляешь своим организмом, а не он тобой!</b>
+            </div>
+            <img class="cert__img" src="./assets/img/check.png" alt="avocado">
+          </div>
+
+          <div class="center-cta">
+            <button class="btn btn-primary" type="button" onclick="location.href='./assistant.html'">Начать</button>
+            <button class="btn btn-outline" type="button" onclick="location.href='./assistant.html'">Подробнее</button>
+          </div>
+
+          <h2 class="h2 h2-center">Тренировки</h2>
+
+          <div class="cards-row">
+            <a class="mini-card" href="./trainings.html">
+              <img src="./assets/img/check.png" alt="card">
+              <div class="mini-card__cap">
+                <div class="mini-card__title">Здоровая спина</div>
+                <div class="mini-card__xp">+150xp</div>
               </div>
             </a>
 
-            <a class="card item" href="./trainings.html">
-              <div class="thumb"><img src="./assets/img/check.png" alt=""></div>
-              <div class="meta">
-                <div class="name">Зарядки</div>
-                <div class="row"><span class="muted">Для дома</span><span class="xp">+150xp</span></div>
+            <a class="mini-card" href="./trainings.html">
+              <img src="./assets/img/check.png" alt="card">
+              <div class="mini-card__cap">
+                <div class="mini-card__title">Зарядки</div>
+                <div class="mini-card__xp">+150xp</div>
+              </div>
+            </a>
+
+            <a class="mini-card" href="./trainings.html">
+              <img src="./assets/img/check.png" alt="card">
+              <div class="mini-card__cap">
+                <div class="mini-card__title">Кардио</div>
+                <div class="mini-card__xp">+150xp</div>
               </div>
             </a>
           </div>
 
-          <div class="h2" style="margin-top:14px;">Рецепты</div>
-          <div class="grid2">
-            <a class="card item" href="./food.html">
-              <div class="thumb"><img src="./assets/img/check.png" alt=""></div>
-              <div class="meta">
-                <div class="name">Овощная запеканка</div>
-                <div class="row"><span class="muted">30 мин</span><span class="xp">+150xp</span></div>
+          <h2 class="h2 h2-center">Рецепты</h2>
+
+          <div class="cards-row">
+            <a class="mini-card" href="./food.html">
+              <img src="./assets/img/check.png" alt="card">
+              <div class="mini-card__cap">
+                <div class="mini-card__title">Здоровая спина</div>
+                <div class="mini-card__xp">+150xp</div>
               </div>
             </a>
 
-            <a class="card item" href="./food.html">
-              <div class="thumb"><img src="./assets/img/check.png" alt=""></div>
-              <div class="meta">
-                <div class="name">Рататуй</div>
-                <div class="row"><span class="muted">30 мин</span><span class="xp">+220xp</span></div>
+            <a class="mini-card" href="./food.html">
+              <img src="./assets/img/check.png" alt="card">
+              <div class="mini-card__cap">
+                <div class="mini-card__title">Зарядки</div>
+                <div class="mini-card__xp">+150xp</div>
+              </div>
+            </a>
+
+            <a class="mini-card" href="./food.html">
+              <img src="./assets/img/check.png" alt="card">
+              <div class="mini-card__cap">
+                <div class="mini-card__title">Стейк</div>
+                <div class="mini-card__xp">+150xp</div>
               </div>
             </a>
           </div>
-        </div>
 
-        <div class="section">
-          <div class="h2">Тебе точно по пути с нами, если:</div>
-          <div class="kicker">
-            <div class="krow"><div class="ktext">Хочешь улучшить физическую форму</div><div class="arr">›</div></div>
-            <div class="krow"><div class="ktext">Желаешь повысить энергию и продуктивность</div><div class="arr">›</div></div>
-            <div class="krow"><div class="ktext">Стремишься к ЗОЖ, но не знаешь с чего начать</div><div class="arr">›</div></div>
+          <h2 class="h2">Тебе точно по пути с нами, если:</h2>
+
+          <div class="choice-list">
+            <a class="choice" href="#">
+              <span>Хочешь улучшить физическую форму</span>
+              <span class="chev">›</span>
+            </a>
+            <a class="choice" href="#">
+              <span>Желаешь повысить свою энергию и производительность</span>
+              <span class="chev">›</span>
+            </a>
+            <a class="choice" href="#">
+              <span>Стремишься к ведению ЗОЖ, но не знаешь с чего начать и как не сорваться</span>
+              <span class="chev">›</span>
+            </a>
           </div>
-        </div>
 
-        <div class="footer-space"></div>
+          <div style="height:24px"></div>
+        </section>
 
       </div>
     </div>
   </div>
 
-<!-- Drawer -->
-<div class="drawer-backdrop" id="drawerBackdrop">
-  <div class="drawer">
-    <div class="dtitle">Меню</div>
+  <!-- Drawer -->
+  <div class="drawer-backdrop" id="drawerBackdrop">
+    <div class="drawer">
+      <div class="dtitle">Меню</div>
 
-    <div class="menu">
-  <a class="mlink" href="./index.html">Главная</a>
-  <a class="mlink" href="./index.html">Игра</a>
-  <a class="mlink" href="./index.html#articles">Статьи</a>
-  <a class="mlink" href="./food.html">Питание</a>
-  <a class="mlink" href="./trainings.html">Тренировки</a>
-  <a class="mlink" href="./index.html#about">О компании</a>
-</div>
+      <div class="menu">
+        <a class="mlink" href="./index.html">Главная</a>
+        <a class="mlink" href="./index.html">Игра</a>
+        <a class="mlink" href="./index.html#articles">Статьи</a>
+        <a class="mlink" href="./food.html">Питание</a>
+        <a class="mlink" href="./trainings.html">Тренировки</a>
+        <a class="mlink" href="./index.html#about">О компании</a>
+      </div>
 
-    <button class="btn close" id="drawerClose">Закрыть</button>
+      <button class="btn btn-outline btn-full" id="drawerClose" type="button">Закрыть</button>
+    </div>
   </div>
-</div>
 
   <script src="./assets/js/app.js"></script>
 </body>
