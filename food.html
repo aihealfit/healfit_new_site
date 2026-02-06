@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HealFit — Питание</title>
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="phone">
+      <div class="app">
+
+        <div class="topbar">
+          <button class="burger" id="burgerBtn" aria-label="Меню"><span></span></button>
+          <div class="logo">HealFit</div>
+          <div class="top-actions">
+            <button class="pill" onclick="location.href='./index.html'">Назад</button>
+            <button class="pill primary" onclick="location.href='./assistant.html'">ИИ-ассистент</button>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="h2">Питание</div>
+
+          <div class="list">
+            <a class="card bigcard" href="./recipe.html">
+              <div class="pic"><img src="./assets/img/check.png" alt=""></div>
+              <div class="info">
+                <div class="t">Овощная запеканка</div>
+                <div class="s">410 ккал · 40/25/8 · 30 мин</div>
+                <div class="bottom">
+                  <span class="chip">Быстро</span>
+                  <span class="right">
+                    <span class="badge">+150xp</span>
+                    <span class="fav"><img src="./assets/img/check.png" alt=""></span>
+                  </span>
+                </div>
+              </div>
+            </a>
+
+            <a class="card bigcard" href="./recipe.html">
+              <div class="pic"><img src="./assets/img/check.png" alt=""></div>
+              <div class="info">
+                <div class="t">Рататуй</div>
+                <div class="s">320 ккал · 8/15/35 · 30 мин</div>
+                <div class="bottom">
+                  <span class="chip">Кино-адаптация</span>
+                  <span class="right">
+                    <span class="badge">+220xp</span>
+                    <span class="fav"><img src="./assets/img/check.png" alt=""></span>
+                  </span>
+                </div>
+              </div>
+            </a>
+
+            <a class="card bigcard" href="./recipe.html">
+              <div class="pic"><img src="./assets/img/check.png" alt=""></div>
+              <div class="info">
+                <div class="t">Стейк с овощами гриль</div>
+                <div class="s">650 ккал · 45/40/20 · 35 мин</div>
+                <div class="bottom">
+                  <span class="chip">Шеф</span>
+                  <span class="right">
+                    <span class="badge">+350xp</span>
+                    <span class="fav"><img src="./assets/img/check.png" alt=""></span>
+                  </span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-space"></div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Drawer -->
+  <div class="drawer-backdrop" id="drawerBackdrop">
+    <div class="drawer">
+      <div class="dtitle">Меню</div>
+      <div class="menu">
+        <a class="mlink" href="./index.html">Главная</a>
+        <a class="mlink" href="./trainings.html">Тренировки</a>
+        <a class="mlink" href="./assistant.html">ИИ-ассистент</a>
+      </div>
+      <button class="btn close" id="drawerClose">Закрыть</button>
+    </div>
+  </div>
+
+  <script src="./assets/js/app.js"></script>
+</body>
+</html>

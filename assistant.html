@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HealFit — ИИ-ассистент</title>
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="phone">
+      <div class="app">
+
+        <div class="topbar">
+          <button class="burger" id="burgerBtn" aria-label="Меню"><span></span></button>
+          <div class="logo">HealFit</div>
+          <div class="top-actions">
+            <button class="pill primary">Вход</button>
+            <button class="pill">Регистрация</button>
+          </div>
+        </div>
+
+        <div class="tabs">
+          <div class="tabbar">
+            <div class="tab" data-go="./index.html">Информация</div>
+            <div class="tab active" data-go="./assistant.html">ИИ-ассистент</div>
+          </div>
+        </div>
+
+        <div class="chat">
+          <div class="chatbox" id="chatOut">
+            <div class="bubble">
+              <div class="avatar"><img src="./assets/img/check.png" alt=""></div>
+              <div class="msg">
+                Привет, дорогой друг! Добро пожаловать в HealFit 🙂<br><br>
+                Я помогу тебе: питание / активность / сон / стресс — без жестких правил.<br><br>
+                Напиши цель (например: “хочу больше энергии”), и я предложу первый шаг.
+              </div>
+            </div>
+          </div>
+
+          <div class="inputbar">
+            <input class="input" id="chatInput" placeholder="Напиши сообщение..." />
+            <button class="send" id="sendBtn">Отправить</button>
+          </div>
+        </div>
+
+        <div class="footer-space"></div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Drawer -->
+  <div class="drawer-backdrop" id="drawerBackdrop">
+    <div class="drawer">
+      <div class="dtitle">Меню</div>
+      <div class="menu">
+        <a class="mlink" href="./index.html">Главная</a>
+        <a class="mlink" href="./trainings.html">Тренировки</a>
+        <a class="mlink" href="./food.html">Питание</a>
+        <a class="mlink" href="./assistant.html">ИИ-ассистент</a>
+      </div>
+      <button class="btn close" id="drawerClose">Закрыть</button>
+    </div>
+  </div>
+
+  <script src="./assets/js/app.js"></script>
+</body>
+</html>

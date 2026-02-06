@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HealFit — Рецепт</title>
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="phone">
+      <div class="app">
+
+        <div class="topbar">
+          <button class="burger" id="burgerBtn" aria-label="Меню"><span></span></button>
+          <div class="logo">HealFit</div>
+          <div class="top-actions">
+            <button class="pill" onclick="location.href='./food.html'">Назад</button>
+            <button class="pill primary" onclick="location.href='./assistant.html'">ИИ-ассистент</button>
+          </div>
+        </div>
+
+        <div class="recipe">
+          <div class="card">
+            <div class="bigcard" style="padding-bottom:0;">
+              <div class="pic"><img src="./assets/img/check.png" alt=""></div>
+              <div class="info">
+                <div class="t" style="font-size:18px;">Овощная запеканка</div>
+                <div class="s">30 минут · 410 ккал</div>
+                <div class="bottom">
+                  <span class="chip">Быстро</span>
+                  <span class="right"><span class="badge">+150xp</span></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="box">
+              <div class="title">Ингредиенты</div>
+              <ul>
+                <li>Куриное филе — 150 г</li>
+                <li>Цветная капуста — 300 г</li>
+                <li>Йогурт натуральный (или сметана 10%) — 100 г</li>
+                <li>Яйцо — 1 шт.</li>
+                <li>Сыр (тёртый) — 50 г</li>
+                <li>Соль, перец, мускатный орех</li>
+              </ul>
+
+              <div class="title" style="margin-top:14px;">Приготовление</div>
+              <ol>
+                <li>Разбери цветную капусту на соцветия и отвари 5–7 минут.</li>
+                <li>Нарежь курицу, смешай с йогуртом и яйцом.</li>
+                <li>Добавь специи и половину сыра.</li>
+                <li>Выложи в форму, посыпь остатком сыра.</li>
+                <li>Запекай при 180°C 20–25 минут.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-space"></div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Drawer -->
+  <div class="drawer-backdrop" id="drawerBackdrop">
+    <div class="drawer">
+      <div class="dtitle">Меню</div>
+      <div class="menu">
+        <a class="mlink" href="./index.html">Главная</a>
+        <a class="mlink" href="./food.html">Питание</a>
+        <a class="mlink" href="./trainings.html">Тренировки</a>
+        <a class="mlink" href="./assistant.html">ИИ-ассистент</a>
+      </div>
+      <button class="btn close" id="drawerClose">Закрыть</button>
+    </div>
+  </div>
+
+  <script src="./assets/js/app.js"></script>
+</body>
+</html>

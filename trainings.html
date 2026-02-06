@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HealFit — Тренировки</title>
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="phone">
+      <div class="app">
+
+        <div class="topbar">
+          <button class="burger" id="burgerBtn" aria-label="Меню"><span></span></button>
+          <div class="logo">HealFit</div>
+          <div class="top-actions">
+            <button class="pill" onclick="location.href='./index.html'">Назад</button>
+            <button class="pill primary" onclick="location.href='./assistant.html'">ИИ-ассистент</button>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="h2">Тренировки</div>
+          <div class="list">
+            <div class="card bigcard">
+              <div class="pic"><img src="./assets/img/check.png" alt=""></div>
+              <div class="info">
+                <div class="t">Здоровая спина</div>
+                <div class="s">20 минут в день · Для дома</div>
+                <div class="bottom">
+                  <span class="chip">Сжигаем ~130 ккал</span>
+                  <span class="right">
+                    <span class="badge">+150xp</span>
+                    <span class="fav"><img src="./assets/img/check.png" alt=""></span>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="card bigcard">
+              <div class="pic"><img src="./assets/img/check.png" alt=""></div>
+              <div class="info">
+                <div class="t">Зарядки</div>
+                <div class="s">10–15 минут · Для дома</div>
+                <div class="bottom">
+                  <span class="chip">Бодрое утро</span>
+                  <span class="right">
+                    <span class="badge">+150xp</span>
+                    <span class="fav"><img src="./assets/img/check.png" alt=""></span>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="card bigcard">
+              <div class="pic"><img src="./assets/img/check.png" alt=""></div>
+              <div class="info">
+                <div class="t">Кардио без прыжков</div>
+                <div class="s">15 минут · Для зала/дома</div>
+                <div class="bottom">
+                  <span class="chip">Сжигаем ~320 ккал</span>
+                  <span class="right">
+                    <span class="badge">+150xp</span>
+                    <span class="fav"><img src="./assets/img/check.png" alt=""></span>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="footer-space"></div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Drawer -->
+  <div class="drawer-backdrop" id="drawerBackdrop">
+    <div class="drawer">
+      <div class="dtitle">Меню</div>
+      <div class="menu">
+        <a class="mlink" href="./index.html">Главная</a>
+        <a class="mlink" href="./food.html">Питание</a>
+        <a class="mlink" href="./assistant.html">ИИ-ассистент</a>
+      </div>
+      <button class="btn close" id="drawerClose">Закрыть</button>
+    </div>
+  </div>
+
+  <script src="./assets/js/app.js"></script>
+</body>
+</html>
