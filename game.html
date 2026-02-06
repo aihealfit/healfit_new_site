@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>HealFit — ИИ-ассистент</title>
+  <title>HealFit — Игра</title>
   <link rel="stylesheet" href="./assets/css/styles.css" />
 </head>
 <body>
@@ -17,29 +17,40 @@
           </button>
           <div class="brand"><span class="brand__logo">HealFit</span></div>
           <div class="auth">
-            <a class="pill pill--fill" href="#">Вход</a>
-            <a class="pill" href="#">Регистрация</a>
+            <a class="pill" href="./index.html">Назад</a>
+            <a class="pill pill--fill" href="./assistant.html">ИИ-ассистент</a>
           </div>
         </header>
 
-        <div class="tabs-row">
-          <button class="back" type="button" onclick="location.href='./index.html'" aria-label="Назад">‹</button>
-          <div class="tabs">
-            <button class="tab" type="button" data-go="./index.html">Информация</button>
-            <button class="tab active" type="button">ИИ-ассистент</button>
-          </div>
-        </div>
+        <div class="section">
+          <div class="h2">Игра (демо)</div>
+          <div class="hero-box"><img src="./assets/img/check.png" alt=""></div>
 
-        <div class="chatbox" id="chatOut">
-          <div class="chat-msg">
-            Привет! Я помогу с питанием/активностью/сном/стрессом 🙂<br><br>
-            Напиши цель (например: “хочу больше энергии”), и я предложу первый шаг.
+          <div style="margin-top:12px;font-size:14px;color:rgba(31,42,31,.75);line-height:1.4;">
+            Здесь позже будут уровни, XP, стрик, уроки и прохождение модулей.
           </div>
-        </div>
 
-        <div class="inputbar">
-          <input id="chatInput" placeholder="Напиши сообщение..." />
-          <button id="sendBtn">Отправить</button>
+          <div class="cards" style="margin-top:12px;">
+            <div class="big-card">
+              <div class="big-card__info">
+                <div class="big-card__head">
+                  <div class="big-card__title">XP</div>
+                  <div class="big-card__xp">0</div>
+                </div>
+                <div class="big-card__sub">Начни с тренировок или рецептов — и заработай XP</div>
+              </div>
+            </div>
+
+            <div class="big-card">
+              <div class="big-card__info">
+                <div class="big-card__head">
+                  <div class="big-card__title">Стрик</div>
+                  <div class="big-card__xp">0 дней</div>
+                </div>
+                <div class="big-card__sub">Скоро: “уроки без ошибок подряд”</div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="footer-space"></div>

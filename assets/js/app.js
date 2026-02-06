@@ -1,67 +1,90 @@
-const $ = (s, root=document) => root.querySelector(s);
-const $$ = (s, root=document) => Array.from(root.querySelectorAll(s));
+// assets/js/app.js
+const $ = (s, root = document) => root.querySelector(s);
+const $$ = (s, root = document) => Array.from(root.querySelectorAll(s));
 
-function openDrawer(){
-  const bd = $("#drawerBackdrop");
-  if(!bd) return;
-  bd.style.display = "flex";
-}
-function closeDrawer(){
-  const bd = $("#drawerBackdrop");
-  if(!bd) return;
-  bd.style.display = "none";
-}
-
-function initDrawer(){
-  const burger = $("#burgerBtn");
-  const bd = $("#drawerBackdrop");
+function initDrawer() {
+  const backdrop = $("#drawerBackdrop");
+  const openBtn = $("#menuBtn") || $("#burgerBtn"); // поддержка обоих id
   const closeBtn = $("#drawerClose");
 
-  if(burger) burger.addEventListener("click", openDrawer);
-  if(closeBtn) closeBtn.addEventListener("click", closeDrawer);
+  if (!backdrop || !openBtn) return;
 
-  if(bd){
-    bd.addEventListener("click", (e)=>{
-      if(e.target === bd) closeDrawer();
+  // защита от двойного бинда
+  if (backdrop.dataset.bound === "1") return;
+  backdrop.dataset.bound = "1";
+
+  const open = () => {
+    backdrop.classList.add("open");
+    backdrop.setAttribute("aria-hidden", "false");
+    document.body.classList.add("no-scroll");
+  };
+
+  const close = () => {
+    backdrop.classList.remove("open");
+    backdrop.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("no-scroll");
+  };
+
+  // начальное состояние
+  close();
+
+  openBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    backdrop.classList.contains("open") ? close() : open();
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      close();
     });
   }
+
+  // клик по подложке закрывает
+  backdrop.addEventListener("click", (e) => {
+    if (e.target === backdrop) close();
+  });
+
+  // esc закрывает
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") close();
+  });
+
+  // клики по пунктам меню закрывают
+  backdrop.querySelectorAll("a.mlink").forEach((a) => {
+    a.addEventListener("click", () => close());
+  });
 }
 
-function initTabs(){
-  const tabs = $$(".tab");
-  if(!tabs.length) return;
-
-  tabs.forEach(t=>{
-    t.addEventListener("click", ()=>{
-      tabs.forEach(x=>x.classList.remove("active"));
-      t.classList.add("active");
+function initTabs() {
+  // табы формата: <button class="tab" data-go="...">
+  $$(".tab[data-go]").forEach((t) => {
+    t.addEventListener("click", () => {
       const go = t.dataset.go;
-      if(go) window.location.href = go;
+      if (go) window.location.href = go;
     });
   });
 }
 
-function initChat(){
+function initChat() {
   const btn = $("#sendBtn");
   const input = $("#chatInput");
   const out = $("#chatOut");
-  if(!btn || !input || !out) return;
+  if (!btn || !input || !out) return;
 
-  btn.addEventListener("click", ()=>{
+  btn.addEventListener("click", () => {
     const v = input.value.trim();
-    if(!v) return;
+    if (!v) return;
 
-    const p = document.createElement("div");
-    p.className = "msg";
-    p.style.background = "#eaf2ec";
-    p.style.marginTop = "10px";
-    p.textContent = "Ты: " + v;
-    out.appendChild(p);
+    const u = document.createElement("div");
+    u.className = "chat-msg chat-msg--user";
+    u.textContent = "Ты: " + v;
+    out.appendChild(u);
 
     const a = document.createElement("div");
-    a.className = "msg";
-    a.style.marginTop = "10px";
-    a.textContent = "HealFit: Принял! Пока это демо. Далее подключим логику рекомендаций 🙂";
+    a.className = "chat-msg";
+    a.textContent = "HealFit: Принял! Пока это демо 🙂";
     out.appendChild(a);
 
     input.value = "";
@@ -69,7 +92,7 @@ function initChat(){
   });
 }
 
-document.addEventListener("DOMContentLoaded", ()=>{
+document.addEventListener("DOMContentLoaded", () => {
   initDrawer();
   initTabs();
   initChat();

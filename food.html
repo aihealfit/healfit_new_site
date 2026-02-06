@@ -6,94 +6,117 @@
   <title>HealFit — Питание</title>
   <link rel="stylesheet" href="./assets/css/styles.css" />
 </head>
-<body>
+<body class="food-page">
   <div class="container">
     <div class="phone">
       <div class="app">
 
-        <div class="topbar">
-          <button class="burger" id="burgerBtn" aria-label="Меню"><span></span></button>
-          <div class="logo">HealFit</div>
-          <div class="top-actions">
-            <button class="pill" onclick="location.href='./index.html'">Назад</button>
-            <button class="pill primary" onclick="location.href='./assistant.html'">ИИ-ассистент</button>
+        <header class="topbar">
+          <button class="icon-btn" id="burgerBtn" aria-label="Меню" type="button">
+            <span class="burger" aria-hidden="true"><span></span><span></span><span></span></span>
+          </button>
+          <div class="brand"><span class="brand__logo">HealFit</span></div>
+          <div class="auth">
+            <a class="pill pill--fill" href="#">Вход</a>
+            <a class="pill" href="#">Регистрация</a>
+          </div>
+        </header>
+
+        <div class="tabs-row">
+          <button class="back" type="button" onclick="location.href='./index.html'" aria-label="Назад">‹</button>
+          <div class="tabs">
+            <button class="tab active" type="button">Питание</button>
+            <button class="tab" type="button" data-go="./assistant.html">ИИ-ассистент</button>
           </div>
         </div>
 
-        <div class="section">
-          <div class="h2">Питание</div>
+        <div class="hero-box">
+          <img src="./assets/img/check.png" alt="Питание" />
+        </div>
 
-          <div class="list">
-            <a class="card bigcard" href="./recipe.html">
-              <div class="pic"><img src="./assets/img/check.png" alt=""></div>
-              <div class="info">
-                <div class="t">Овощная запеканка</div>
-                <div class="s">410 ккал · 40/25/8 · 30 мин</div>
-                <div class="bottom">
-                  <span class="chip">Быстро</span>
-                  <span class="right">
-                    <span class="badge">+150xp</span>
-                    <span class="fav"><img src="./assets/img/check.png" alt=""></span>
-                  </span>
-                </div>
-              </div>
-            </a>
-
-            <a class="card bigcard" href="./recipe.html">
-              <div class="pic"><img src="./assets/img/check.png" alt=""></div>
-              <div class="info">
-                <div class="t">Рататуй</div>
-                <div class="s">320 ккал · 8/15/35 · 30 мин</div>
-                <div class="bottom">
-                  <span class="chip">Кино-адаптация</span>
-                  <span class="right">
-                    <span class="badge">+220xp</span>
-                    <span class="fav"><img src="./assets/img/check.png" alt=""></span>
-                  </span>
-                </div>
-              </div>
-            </a>
-
-            <a class="card bigcard" href="./recipe.html">
-              <div class="pic"><img src="./assets/img/check.png" alt=""></div>
-              <div class="info">
-                <div class="t">Стейк с овощами гриль</div>
-                <div class="s">650 ккал · 45/40/20 · 35 мин</div>
-                <div class="bottom">
-                  <span class="chip">Шеф</span>
-                  <span class="right">
-                    <span class="badge">+350xp</span>
-                    <span class="fav"><img src="./assets/img/check.png" alt=""></span>
-                  </span>
-                </div>
-              </div>
-            </a>
+        <div class="search-row">
+          <button class="filter" type="button">Все <span class="chev">▾</span></button>
+          <div class="search">
+            <span class="sicon">🔎</span>
+            <input type="text" placeholder="Search" aria-label="Search" />
           </div>
+          <button class="heart" type="button" aria-label="Избранное">♥</button>
+        </div>
+
+        <div class="section cards">
+          <a class="big-card" href="./recipe.html">
+            <img class="big-card__img" src="./assets/img/check.png" alt="Овощная запеканка" />
+            <div class="big-card__info">
+              <div class="big-card__head">
+                <div class="big-card__title">Овощная запеканка</div>
+                <div class="big-card__xp">+150xp</div>
+              </div>
+              <div class="big-card__sub">410кк; 40/25/8 · Быстро · 30 мин</div>
+              <div class="big-card__foot">
+                <div class="author">
+                  <span class="avatar"><img src="./assets/img/check.png" alt=""></span>
+                  <span class="aname">Анна Потапова</span>
+                  <span class="adesc">Фитнес-блогер с 1К подписчиков</span>
+                </div>
+                <button class="fav-btn" type="button" aria-label="В избранное"
+                  onclick="event.preventDefault();event.stopPropagation();this.textContent=(this.textContent==='♡'?'♥':'♡')">♡</button>
+              </div>
+            </div>
+          </a>
+
+          <a class="big-card" href="./recipe.html">
+            <img class="big-card__img" src="./assets/img/check.png" alt="Рататуй" />
+            <div class="big-card__info">
+              <div class="big-card__head">
+                <div class="big-card__title">Рататуй</div>
+                <div class="big-card__xp">+220xp</div>
+              </div>
+              <div class="big-card__sub">320кк; 8/15/35 · 30 мин · Кино адаптация</div>
+              <div class="big-card__foot">
+                <div class="note">Более полезный рецепт блюда из всеми известного мультфильма</div>
+                <button class="fav-btn" type="button" aria-label="В избранное"
+                  onclick="event.preventDefault();event.stopPropagation();this.textContent=(this.textContent==='♡'?'♥':'♡')">♡</button>
+              </div>
+            </div>
+          </a>
+
+          <a class="big-card" href="./recipe.html">
+            <img class="big-card__img" src="./assets/img/check.png" alt="Стейк с овощами гриль" />
+            <div class="big-card__info">
+              <div class="big-card__head">
+                <div class="big-card__title">Стейк с овощами гриль</div>
+                <div class="big-card__xp">+350xp</div>
+              </div>
+              <div class="big-card__sub">650кк; 45/40/20 · Шеф</div>
+              <div class="big-card__foot">
+                <div class="note">Рецепт для ценителей мяса, которые хотят расширить свою базу рецептов</div>
+                <button class="fav-btn" type="button" aria-label="В избранное"
+                  onclick="event.preventDefault();event.stopPropagation();this.textContent=(this.textContent==='♡'?'♥':'♡')">♡</button>
+              </div>
+            </div>
+          </a>
         </div>
 
         <div class="footer-space"></div>
-
       </div>
     </div>
   </div>
 
-<!-- Drawer -->
-<div class="drawer-backdrop" id="drawerBackdrop">
-  <div class="drawer">
-    <div class="dtitle">Меню</div>
-
-    <div class="menu">
-  <a class="mlink" href="./index.html">Главная</a>
-  <a class="mlink" href="./index.html">Игра</a>
-  <a class="mlink" href="./index.html#articles">Статьи</a>
-  <a class="mlink" href="./food.html">Питание</a>
-  <a class="mlink" href="./trainings.html">Тренировки</a>
-  <a class="mlink" href="./index.html#about">О компании</a>
-</div>
-
-    <button class="btn close" id="drawerClose">Закрыть</button>
+  <!-- Drawer -->
+  <div class="drawer-backdrop" id="drawerBackdrop" aria-hidden="true">
+    <nav class="drawer" aria-label="Меню">
+      <div class="dtitle">Меню</div>
+      <div class="menu">
+        <a class="mlink" href="./index.html">Главная</a>
+        <a class="mlink" href="./game.html">Игра</a>
+        <a class="mlink" href="./food.html">Питание</a>
+        <a class="mlink" href="./trainings.html">Тренировки</a>
+        <a class="mlink" href="./assistant.html">ИИ-ассистент</a>
+        <a class="mlink" href="./about.html">О компании</a>
+      </div>
+      <button class="btn-wide" id="drawerClose" type="button">Закрыть</button>
+    </nav>
   </div>
-</div>
 
   <script src="./assets/js/app.js"></script>
 </body>
