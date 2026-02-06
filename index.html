@@ -15,7 +15,11 @@
         <!-- Header -->
         <header class="topbar">
           <button class="iconbtn" id="drawerOpen" aria-label="Открыть меню">
-            <span class="burger"></span>
+            <span class="burger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
           </button>
 
           <div class="brand">
@@ -241,5 +245,32 @@
   </div>
 
   <script src="./assets/js/app.js"></script>
+
+<script>
+  (function () {
+    const openBtn = document.getElementById('drawerOpen');
+    const closeBtn = document.getElementById('drawerClose');
+    const backdrop = document.getElementById('drawerBackdrop');
+
+    if (!openBtn || !closeBtn || !backdrop) return;
+
+    const open = () => backdrop.classList.add('show');
+    const close = () => backdrop.classList.remove('show');
+
+    openBtn.addEventListener('click', open);
+    closeBtn.addEventListener('click', close);
+
+    // закрытие по клику на фон
+    backdrop.addEventListener('click', (e) => {
+      if (e.target === backdrop) close();
+    });
+
+    // закрытие по Esc
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') close();
+    });
+  })();
+</script>
+
 </body>
 </html>
