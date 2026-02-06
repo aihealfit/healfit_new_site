@@ -437,15 +437,43 @@ button{font:inherit}
 }
 .recipe li{margin:6px 0; font-size:13px; line-height:1.25}
 
-/* Убираем внешнюю рамку/карточку вокруг всего сайта */
-.phone, .app, .container {
-  border: none !important;
-  box-shadow: none !important;
-  outline: none !important;
-  background: transparent !important;
+/* Callout как на референсе (плашка со стрессом) */
+.hf-callout{
+  position: relative;
+  margin: 18px 0;
+  padding: 20px 18px;
+  border-radius: 24px;
+  background: #dfe9de;
+  box-shadow: 0 10px 22px rgba(0,0,0,.18);
+  overflow: visible;
 }
 
-/* если ещё остаётся скругление по краям */
-.phone, .app {
-  border-radius: 0 !important;
+/* Серый текст под плашкой слева */
+.hf-callout__under{
+  position: absolute;
+  left: 14px;
+  bottom: 10px;
+  font-size: 28px;
+  font-weight: 700;
+  color: rgba(0,0,0,.16);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Текст плашки */
+.hf-callout__text{
+  font-size: 22px;
+  line-height: 1.18;
+  color: #1f2a1f;
+  padding-right: 120px; /* место под картинку справа */
+}
+
+/* Картинка справа */
+.hf-callout__img{
+  position: absolute;
+  right: 14px;
+  bottom: -8px; /* немного “вылезает” вниз */
+  width: 110px;
+  height: auto;
+  filter: drop-shadow(0 10px 16px rgba(0,0,0,.22));
 }
