@@ -23,27 +23,21 @@
         </header>
 
         <div class="section">
-          <div class="h2">Овощная запеканка</div>
-          <div class="hero-box"><img src="./assets/img/check.png" alt=""></div>
+          <div class="h2" id="recipeTitle">Рецепт</div>
 
-          <div style="margin-top:12px;font-size:13px;color:rgba(31,42,31,.75);line-height:1.4;">
-            30 минут · 410 ккал · 40/25/8
+          <div class="hero-box">
+            <img id="recipeImg" src="./assets/img/check.png" alt="">
+          </div>
+
+          <div id="recipeMeta" style="margin-top:12px;font-size:13px;color:rgba(31,42,31,.75);line-height:1.4;">
+            —
           </div>
 
           <div style="margin-top:12px;font-weight:900;color:var(--green);">Ингредиенты</div>
-          <ul style="margin:8px 0 0 18px;color:rgba(31,42,31,.75);">
-            <li>Цветная капуста — 300 г</li>
-            <li>Яйцо — 1 шт.</li>
-            <li>Йогурт — 100 г</li>
-            <li>Сыр — 50 г</li>
-          </ul>
+          <ul id="recipeIngredients" style="margin:8px 0 0 18px;color:rgba(31,42,31,.75);"></ul>
 
           <div style="margin-top:12px;font-weight:900;color:var(--green);">Приготовление</div>
-          <ol style="margin:8px 0 0 18px;color:rgba(31,42,31,.75);">
-            <li>Отвари капусту 5–7 минут.</li>
-            <li>Смешай с яйцом и йогуртом.</li>
-            <li>Запекай 20–25 минут при 180°C.</li>
-          </ol>
+          <ol id="recipeSteps" style="margin:8px 0 0 18px;color:rgba(31,42,31,.75);"></ol>
         </div>
 
         <div class="footer-space"></div>
@@ -68,5 +62,99 @@
   </div>
 
   <script src="./assets/js/app.js"></script>
+
+  <!-- Recipe switcher -->
+  <script>
+    const RECIPES = {
+      casserole: {
+        title: "Запеканка с овощами",
+        img: "./assets/img/casserole.png",
+        meta: "30 минут · 410 ккал · 40/25/8",
+        ingredients: [
+          "Цветная капуста — 300 г",
+          "Яйцо — 1 шт.",
+          "Йогурт — 100 г",
+          "Сыр — 50 г"
+        ],
+        steps: [
+          "Отвари капусту 5–7 минут.",
+          "Смешай с яйцом и йогуртом.",
+          "Переложи в форму, посыпь сыром.",
+          "Запекай 20–25 минут при 180°C."
+        ]
+      },
+      ratatui: {
+        title: "Рататуй",
+        img: "./assets/img/ratatui.png",
+        meta: "30 минут · 320 ккал · 8/15/35",
+        ingredients: [
+          "Кабачок — 1 шт.",
+          "Баклажан — 1 шт.",
+          "Помидоры — 3 шт.",
+          "Лук — 1 шт.",
+          "Оливковое масло — 1–2 ст. л.",
+          "Соль, специи — по вкусу"
+        ],
+        steps: [
+          "Нарежь овощи кружочками/полукружочками.",
+          "Выложи слоями в форму, посоли и добавь специи.",
+          "Смажьте масло маслом.",
+          "Запекай 25–30 минут при 180°C."
+        ]
+      },
+      steak: {
+        title: "Стейк с овощами гриль",
+        img: "./assets/img/steak.png",
+        meta: "35 минут · 650 ккал · 45/40/20",
+        ingredients: [
+          "Стейк (говядина/индейка) — 200–250 г",
+          "Перец болгарский — 1 шт.",
+          "Цукини — 1/2 шт.",
+          "Шампиньоны — 150 г",
+          "Оливковое масло — 1 ст. л.",
+          "Соль, перец — по вкусу"
+        ],
+        steps: [
+          "Замаринуй стейк (соль/перец/масло) на 10 минут.",
+          "Нарежь овощи, слегка посоли и сбрызни маслом.",
+          "Обжарь стейк 3–5 минут с каждой стороны (по желаемой прожарке).",
+          "Овощи обжарь на гриле/сковороде 6–8 минут.",
+          "Подавай вместе."
+        ]
+      }
+    };
+
+    function getParam(name){
+      const p = new URLSearchParams(location.search);
+      return p.get(name);
+    }
+
+    function renderRecipe(key){
+      const r = RECIPES[key] || RECIPES.casserole;
+
+      document.title = "HealFit — " + r.title;
+      document.getElementById("recipeTitle").textContent = r.title;
+      document.getElementById("recipeImg").src = r.img;
+      document.getElementById("recipeMeta").textContent = r.meta;
+
+      const ing = document.getElementById("recipeIngredients");
+      ing.innerHTML = "";
+      r.ingredients.forEach(x=>{
+        const li = document.createElement("li");
+        li.textContent = x;
+        ing.appendChild(li);
+      });
+
+      const steps = document.getElementById("recipeSteps");
+      steps.innerHTML = "";
+      r.steps.forEach(x=>{
+        const li = document.createElement("li");
+        li.textContent = x;
+        steps.appendChild(li);
+      });
+    }
+
+    renderRecipe(getParam("id"));
+  </script>
 </body>
 </html>

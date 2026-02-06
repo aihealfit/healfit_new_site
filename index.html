@@ -4,93 +4,198 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>HealFit</title>
-  <link rel="stylesheet" href="./assets/css/styles.css" />
+
+  <!-- ВАЖНО: отдельный css только для главной -->
+  <link rel="stylesheet" href="./assets/css/index.css" />
 </head>
-<body>
-  <div class="container">
-    <div class="phone">
-      <div class="app">
 
-        <header class="topbar">
-          <button class="icon-btn" id="menuBtn" aria-label="Меню" type="button">
-            <span class="burger" aria-hidden="true"><span></span><span></span><span></span></span>
-          </button>
+<body class="home-page">
+  <main class="page">
+    <div class="wrap">
 
-          <div class="brand"><span class="brand__logo">HealFit</span></div>
+      <!-- Top header -->
+      <header class="topbar">
+        <button class="icon-btn" id="menuBtn" aria-label="Меню" type="button">
+          <span class="burger" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </span>
+        </button>
 
-          <div class="auth">
-            <a class="pill pill--fill" href="#">Вход</a>
-            <a class="pill" href="#">Регистрация</a>
-          </div>
-        </header>
-
-        <div class="tabs-row">
-          <button class="back" type="button" aria-label="Назад" onclick="location.href='./index.html'">‹</button>
-          <div class="tabs">
-            <button class="tab active" type="button">Информация</button>
-            <button class="tab" type="button" data-go="./assistant.html">ИИ-ассистент</button>
-          </div>
+        <div class="brand">
+          <span class="brand__logo">HealFit</span>
         </div>
 
-        <div class="hero-box">
-          <img src="./assets/img/check.png" alt="HealFit" />
+        <div class="auth">
+          <a class="pill pill--fill" href="#">Вход</a>
+          <a class="pill" href="#">Регистрация</a>
         </div>
+      </header>
 
-        <div class="section">
-          <div class="h2">Коротко о HealFit</div>
-          <div style="font-size:14px;color:rgba(31,42,31,.75);line-height:1.4;">
-            Сервис по подбору питания и активности с учётом индивидуальных особенностей — без жёстких правил.
-          </div>
-        </div>
-
-        <div class="section">
-          <div class="h2">Быстрые переходы</div>
-
-          <div class="cards">
-            <a class="big-card" href="./food.html">
-              <img class="big-card__img" src="./assets/img/check.png" alt="Питание">
-              <div class="big-card__info">
-                <div class="big-card__head">
-                  <div class="big-card__title">Питание</div>
-                  <div class="big-card__xp">Перейти</div>
-                </div>
-                <div class="big-card__sub">Рецепты, простые подборки и любимые блюда</div>
-              </div>
-            </a>
-
-            <a class="big-card" href="./trainings.html">
-              <img class="big-card__img" src="./assets/img/check.png" alt="Тренировки">
-              <div class="big-card__info">
-                <div class="big-card__head">
-                  <div class="big-card__title">Тренировки</div>
-                  <div class="big-card__xp">Перейти</div>
-                </div>
-                <div class="big-card__sub">Подборки тренировок + XP за выполнение</div>
-              </div>
-            </a>
-
-            <a class="big-card" href="./game.html">
-              <img class="big-card__img" src="./assets/img/check.png" alt="Игра">
-              <div class="big-card__info">
-                <div class="big-card__head">
-                  <div class="big-card__title">Игра</div>
-                  <div class="big-card__xp">Перейти</div>
-                </div>
-                <div class="big-card__sub">Уровни, XP, стрик (пока демо)</div>
-              </div>
-            </a>
-          </div>
-        </div>
-
-        <div class="footer-space"></div>
+      <!-- Tabs -->
+      <div class="tabs">
+        <button class="tab tab--active" type="button">Информация</button>
+        <a class="tab" href="./assistant.html">ИИ-ассистент</a>
       </div>
-    </div>
-  </div>
 
-  <!-- Drawer -->
+      <!-- Hero -->
+      <section class="hero">
+        <div class="hero__content">
+          <div class="hero__title">HealFit</div>
+          <div class="hero__subtitle">Попробуй <br> по-другому</div>
+
+          <div class="hero__cta">
+            <a class="btn btn--fill" href="./assistant.html">Начать</a>
+            <a class="btn" href="#more">Подробнее</a>
+          </div>
+        </div>
+
+        <img class="hero__img" src="./assets/img/check.png" alt="hero" />
+        <img class="hero__food hero__food--left" src="./assets/img/check.png" alt="" />
+        <img class="hero__food hero__food--right" src="./assets/img/check.png" alt="" />
+      </section>
+
+      <!-- Lead + bullets 1 -->
+      <section class="section" id="more">
+        <div class="lead">
+          <b>HealFit</b> — сервис по подбору питания и активности с учетом индивидуальных особенностей человека
+        </div>
+
+        <h2 class="h2">Почему тебе понравится с нами</h2>
+
+        <div class="card bullets join-bottom">
+          <div class="bullet">
+            <div class="tick"><img src="./assets/img/checkmark.png" alt=""></div>
+            <div>
+              <div class="title">Персональный план</div>
+              <div class="desc">
+Мы собрали свою базу данных и настроили искусственный интеллект, чтобы помочь именно тебе              </div>
+            </div>
+          </div>
+
+          <div class="bullet">
+            <div class="tick"><img src="./assets/img/checkmark.png" alt=""></div>
+            <div>
+              <div class="title">AI-помощник</div>
+              <div class="desc">
+Получай индивидуальные рекомендации 
+и настраивай сервис под себя              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Green callout (full-bleed) -->
+      <div class="hf-callout">
+        <div class="hf-callout__text">
+          Скажи стоп постоянному стрессу от подсчета калорий и строгих ограничений
+        </div>
+        <img class="hf-callout__img" src="./assets/img/Fly brock.png" alt="mascot" />
+      </div>
+
+      <!-- Bullets 2 (joined to callout сверху) -->
+      <section class="section section--tight">
+        <div class="card bullets join-top join-bottom">
+          <div class="bullet">
+            <div class="tick"><img src="./assets/img/checkmark.png" alt=""></div>
+            <div>
+              <div class="title">Особенный подход</div>
+              <div class="desc">
+Мы не будем говорить тебе вести дневник питания, отказываться от любимых блюд - НЕТ, мы за плавное внедрение полезных привычек               </div>
+            </div>
+          </div>
+
+          <div class="bullet">
+            <div class="tick"><img src="./assets/img/checkmark.png" alt=""></div>
+            <div>
+              <div class="title">Поддержка от партнеров - скидки 
+и другие привилегии</div>
+              <div class="desc">
+Мотивация, которая доведет тебя до желанного результата              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Green banner 2 (full-bleed) -->
+      <div class="green-banner">
+        <img class="green-banner__img" src="./assets/img/Rock brock.png" alt="broccoli">
+        <div class="green-banner__text">
+          Измени свою жизнь, внедрив новые полезные привычки!
+        </div>
+      </div>
+
+      <!-- Certificate -->
+      <section class="section section--tight">
+        <div class="card cert join-top">
+          <div class="cert__text">
+            По итогам ты получишь <b>сертификат биохакера</b>, который будет подтверждать, что теперь 
+<b>ты управляешь своим организмом, а не он тобой!</b>
+          </div>
+          <img class="cert__img" src="./assets/img/avocado.png" alt="avocado">
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <div class="center-cta">
+        <a class="btn btn--fill" href="./assistant.html">Начать</a>
+        <a class="btn" href="./game.html">Перейти в игру</a>
+      </div>
+
+      <!-- Blocks -->
+      <h2 class="h2 h2--center">Тренировки</h2>
+      <div class="grid2">
+        <a class="tile" href="./trainings.html">
+          <img class="tile__img" src="./assets/img/healthy_back.png" alt="">
+          <div class="tile__cap">
+            <div class="tile__title">Здоровая спина</div>
+            <div class="tile__xp">+150xp</div>
+          </div>
+        </a>
+
+        <a class="tile" href="./trainings.html">
+          <img class="tile__img" src="./assets/img/stretching.png" alt="">
+          <div class="tile__cap">
+            <div class="tile__title">Растяжка</div>
+            <div class="tile__xp">+150xp</div>
+          </div>
+        </a>
+      </div>
+
+      <h2 class="h2 h2--center">Питание</h2>
+      <div class="grid2">
+        <a class="tile" href="./food.html">
+          <img class="tile__img" src="./assets/img/casserole.png" alt="">
+          <div class="tile__cap">
+            <div class="tile__title">Овощная запеканка</div>
+            <div class="tile__xp">+150xp</div>
+          </div>
+        </a>
+
+        <a class="tile" href="./food.html">
+          <img class="tile__img" src="./assets/img/ratatui.png" alt="">
+          <div class="tile__cap">
+            <div class="tile__title">Рататуй</div>
+            <div class="tile__xp">+220xp</div>
+          </div>
+        </a>
+      </div>
+
+      <h2 class="h2">Тебе точно по пути с нами, если:</h2>
+      <div class="list">
+        <a class="row" href="./food.html"><span>Хочешь улучшить физическую форму</span><span class="chev">›</span></a>
+        <a class="row" href="./trainings.html"><span>Желаешь повысить энергию и продуктивность</span><span class="chev">›</span></a>
+        <a class="row" href="./assistant.html"><span>Стремишься к ведению ЗОЖ, но не знаешь с чего начать </span><span class="chev">›</span></a>
+      </div>
+
+      <div class="spacer"></div>
+    </div>
+  </main>
+
+  <!-- Drawer (Menu) -->
   <div class="drawer-backdrop" id="drawerBackdrop" aria-hidden="true">
     <nav class="drawer" aria-label="Меню">
       <div class="dtitle">Меню</div>
+
       <div class="menu">
         <a class="mlink" href="./index.html">Главная</a>
         <a class="mlink" href="./game.html">Игра</a>
@@ -99,10 +204,12 @@
         <a class="mlink" href="./assistant.html">ИИ-ассистент</a>
         <a class="mlink" href="./about.html">О компании</a>
       </div>
-      <button class="btn-wide" id="drawerClose" type="button">Закрыть</button>
+
+      <button class="btn btn--wide" id="drawerClose" type="button">Закрыть</button>
     </nav>
   </div>
 
+  <!-- общий app.js можно оставлять -->
   <script src="./assets/js/app.js"></script>
 </body>
 </html>
